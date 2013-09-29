@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="DBOCore">
+      <UniqueIdentifier>{372f8c38-c3b4-43e6-a56d-232c9b0269a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBOCore\Header Files">
+      <UniqueIdentifier>{9deff28e-075d-4930-9506-4c54708a6f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBOCore\Source Files">
+      <UniqueIdentifier>{81c5e69a-185b-48a8-98ce-33af431223a4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\dbo\attrerr.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\AttributeCString.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\attributedef.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\AttributeDouble.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\AttributeGeneric.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\AttributeInt64.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\AttributeUInt64.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\bfloats.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\callocators.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\classerr.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\dbogendefines.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\GenericObj.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\helpers.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\ltstrcmp.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\macros.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\namespace.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\options.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\typesdef.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\bmasks.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AttributeCString.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AttributeDouble.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AttributeGeneric.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AttributeInt64.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AttributeUInt64.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericObj.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bmasks.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="include\dbo\TODO.txt">
+      <Filter>DBOCore\Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

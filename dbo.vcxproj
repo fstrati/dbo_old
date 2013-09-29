@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\dbo\attrerr.h" />
+    <ClInclude Include="include\dbo\AttributeCString.h" />
+    <ClInclude Include="include\dbo\attributedef.h" />
+    <ClInclude Include="include\dbo\AttributeDouble.h" />
+    <ClInclude Include="include\dbo\AttributeGeneric.h" />
+    <ClInclude Include="include\dbo\AttributeInt64.h" />
+    <ClInclude Include="include\dbo\AttributeUInt64.h" />
+    <ClInclude Include="include\dbo\bfloats.h" />
+    <ClInclude Include="include\dbo\bmasks.h" />
+    <ClInclude Include="include\dbo\callocators.h" />
+    <ClInclude Include="include\dbo\classerr.h" />
+    <ClInclude Include="include\dbo\dbogendefines.h" />
+    <ClInclude Include="include\dbo\GenericObj.h" />
+    <ClInclude Include="include\dbo\helpers.h" />
+    <ClInclude Include="include\dbo\ltstrcmp.h" />
+    <ClInclude Include="include\dbo\macros.h" />
+    <ClInclude Include="include\dbo\namespace.h" />
+    <ClInclude Include="include\dbo\options.h" />
+    <CustomBuild Include="include\dbo\TODO.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <FileType>CppHeader</FileType>
+    </CustomBuild>
+    <ClInclude Include="include\dbo\typesdef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AttributeCString.cpp" />
+    <ClCompile Include="src\AttributeDouble.cpp" />
+    <ClCompile Include="src\AttributeGeneric.cpp" />
+    <ClCompile Include="src\AttributeInt64.cpp" />
+    <ClCompile Include="src\AttributeUInt64.cpp" />
+    <ClCompile Include="src\bmasks.cpp" />
+    <ClCompile Include="src\GenericObj.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{093FB3F9-FF4D-4247-B62A-72E953A3B865}</ProjectGuid>
+    <RootNamespace>dbo</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>.\bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>.\bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <AssemblerOutput>All</AssemblerOutput>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CallingConvention>FastCall</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>DBO_DEBUG</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <AssemblerOutput>All</AssemblerOutput>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CallingConvention>FastCall</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

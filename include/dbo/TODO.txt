@@ -1,0 +1,24 @@
+
+// This file purpose is only a tracking list of missing evolutions
+
+// TODO:
+
+// 2013.09.29:
+// -- Conversions from UTF8 to UTF16 does use local codepage
+// -- Conversions of numerical types are NOT checked
+// -- Mismatch between size_t and real dbo size(64bits) on 32bits OS's
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
