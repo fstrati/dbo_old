@@ -8,6 +8,8 @@
 // -- Conversions of numerical types are NOT checked
 // -- Mismatch between size_t and real dbo size(64bits) on 32bits OS's
 
+// 2013.09.29: just testing GitHub
+
 
 
 
