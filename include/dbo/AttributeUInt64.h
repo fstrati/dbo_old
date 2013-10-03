@@ -1,3 +1,9 @@
+/*
+ * Where not otherwise stated the following LICENSE does apply
+ * LICENSE: GNU General Public License version 3.0 - GNU GPL v.3
+ *
+ */
+
 // The 64 bits unsigned integer
 
 #ifndef DBO_ATTRIBUTEUINT64_H_INCLUDED

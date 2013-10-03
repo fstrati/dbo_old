@@ -1,3 +1,9 @@
+/*
+ * Where not otherwise stated the following LICENSE does apply
+ * LICENSE: GNU General Public License version 3.0 - GNU GPL v.3
+ *
+ */
+
 // CAttributeCString: implementation of the c-style String Attribute
 // 
 // For this attribute size() (i.e. capacity) is different from length() and binary_size()

@@ -1,11 +1,15 @@
+/*
+ * Where not otherwise stated the following LICENSE does apply
+ * LICENSE: GNU General Public License version 3.0 - GNU GPL v.3
+ *
+ */
 
 // This file purpose is only a tracking list of missing evolutions
 
 // TODO:
 
 // 2013.09.29:
-// -- Conversions from UTF8 to UTF16 does use local codepage
-// -- Conversions of numerical types are NOT checked
+// -- Conversion policies to be defined
 // -- Mismatch between size_t and real dbo size(64bits) on 32bits OS's
 
 // 2013.09.29: just testing GitHub

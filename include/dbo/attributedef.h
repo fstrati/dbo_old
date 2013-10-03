@@ -1,3 +1,9 @@
+/*
+ * Where not otherwise stated the following LICENSE does apply
+ * LICENSE: GNU General Public License version 3.0 - GNU GPL v.3
+ *
+ */
+
 // Attribute pertinent global definitions
 
 #ifndef DBO_ATTRIBUTEDEF_H_INCLUDED
@@ -11,7 +17,7 @@
 NAMESPACE_DBO_OPEN
 
 // OS independent sizes
-typedef dbo_uint8_t                    DBO_SER_ENDIAN;
+typedef dbo_uint16_t                   DBO_SER_ENDIAN_BOM;
 typedef dbo_uint8_t                    DBO_KIND;
 // the following shall be at least a 64bit unsigned long
 typedef dbo_uint64_t                   DBO_BIN_KIND_SIZE;

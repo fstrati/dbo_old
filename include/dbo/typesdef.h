@@ -1,3 +1,9 @@
+/*
+ * Where not otherwise stated the following LICENSE does apply
+ * LICENSE: GNU General Public License version 3.0 - GNU GPL v.3
+ *
+ */
+
 // Define the basic types used through dbo namespace
 
 #ifndef DBO_TYPESDEF_H_INCLUDED
