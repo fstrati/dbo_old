@@ -14,6 +14,8 @@
 
 NAMESPACE_DBO_OPEN
 
+#define DBO_NEW            new
+#define DBO_DELETE         delete
 #define DBO_MALLOC(x)      std::malloc(x)
 #define DBO_FREE(x)        std::free(x)
 

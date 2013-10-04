@@ -73,6 +73,33 @@
     <ClInclude Include="include\dbo\bmasks.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\dbo\LoggerNull.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\LoggerBase.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\StringTruncateStatic.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\ConvPolicyBase.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\ConvPolicyNull.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\LocaleStatic.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\ConvPolicyConstants.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\LoggerConstants.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\ConvPolicyTrueWin32.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AttributeCString.cpp">
@@ -94,6 +121,27 @@
       <Filter>DBOCore\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\bmasks.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LoggerNull.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LoggerBase.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringTruncateStatic.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConvPolicyBase.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConvPolicyNull.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LocaleStatic.cpp">
+      <Filter>DBOCore\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConvPolicyTrueWin32.cpp">
       <Filter>DBOCore\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -17,6 +17,7 @@ using namespace std;
 
 class CAttributeInt64 : public CAttributeGeneric
 {
+   DBO_DEF_CLASS_H;
    DBO_DEF_ATTR_H;
    DBO_PRI_CLASS_CTOR_H(CAttributeInt64);
 
@@ -24,6 +25,9 @@ class CAttributeInt64 : public CAttributeGeneric
 public:
    CAttributeInt64(const CAttributeInt64&) DBO_NOTHROW ;
    CAttributeInt64& operator=(const CAttributeInt64&) DBO_NOTHROW ;
+
+protected:
+   virtual void buildVirtualCopy(const CAttributeGeneric& iOther) DBO_NOTHROW ;
 
 public:
    // Construction/Destruction
@@ -34,9 +38,8 @@ public:
    explicit CAttributeInt64(const dbo_int64_t& iInt64, const dbo_uint32_t& index, const dbo_string_t& iName) DBO_NOTHROW ;
    virtual ~CAttributeInt64() DBO_NOTHROW ;
 
-   virtual void buildVirtualCopy(const CAttributeGeneric& iOther) DBO_NOTHROW ;
-
-   // Pure virtual interface methods ->
+public:
+   // Pure & virtual interface methods ->
 
    // GET / SET generic methods
    virtual void set(const CAttributeGeneric& iOther) DBO_NOTHROW ;
@@ -63,10 +66,6 @@ public:
    virtual dbo_uint64_t        getAsUInt64(void) const DBO_NOTHROW ;
    virtual void                setAsUInt64(const dbo_uint64_t& iUInt64) DBO_NOTHROW ;
 
-   // Pure virtual interface methods <-
-
-   // Virtual General methods ->
-
    // Warning, setSize does invalidate this attribute
    virtual void setSize(const size_t iSize) DBO_NOTHROW ;
    virtual void reset() DBO_NOTHROW ;
@@ -76,12 +75,19 @@ public:
    virtual void emptyValue(void) DBO_NOTHROW ;
    virtual bool isEmpty(void) const  DBO_NOTHROW ;
 
-   // Serialization
+   // Pure & virtual interface methods <-
+
+public:
+   // Binary Serialization ->
    // virtual const DBO_BIN_KIND_SIZE getBinKindSize(void) const;
 
+protected:
    virtual void getAttributeBinData(DBO_KIND& bType, DBO_BIN_KIND_SIZE& bSize, void*& pAttribute) const DBO_NOTHROW ;
    virtual void setAttributeBinData(const DBO_KIND& bType, const DBO_BIN_KIND_SIZE& bSize, void* pAttribute) DBO_NOTHROW ;
 
+   // Binary Serialization <-
+
+public:
    // Methods only for binary operations ->
 
    // Safe access methods
@@ -93,8 +99,6 @@ public:
    virtual void copyFrom(const dbo_byte_t* const iByteArray, const DBO_BIN_KIND_SIZE& iSize) DBO_NOTHROW ;
 
    // Methods only for binary operations <-
-
-   // Virtual General methods <-
 
    // Very unsafe method
 protected:

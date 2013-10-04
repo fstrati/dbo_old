@@ -44,6 +44,12 @@ typedef unsigned __int32               dbo_uint32_t;
 typedef __int64                        dbo_int64_t;
 typedef unsigned __int64               dbo_uint64_t;
 
+#if 0
+// The following do not work on 32bits old compilers (they map to 64bits integers)
+typedef long long                      dbo_int128_t;
+typedef unsigned long long             dbo_uint128_t;
+#endif
+
 typedef float                          dbo_single_t;
 typedef double                         dbo_double_t;
 typedef long double                    dbo_quad_t;

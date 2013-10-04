@@ -17,24 +17,24 @@
 
 // General Macro's
 
+#define DBO_VALIDP(x)    ( NULL != (x) )
+#define DBO_INVALIDP(x)  ( NULL == (x) )
+
 #define DBO_DEF_CLASS_H \
 private: \
    static dbo_string_t _classname; \
 public: \
-   virtual dbo_string_t getClassName(void) const DBO_NOTHROW \
+   dbo_string_t getClassName(void) const DBO_NOTHROW \
    { \
       return _classname; \
    }
 
 #define DBO_PRI_CLASS_CTOR_H(x) \
-private: \
-   x() { 0; }
+protected: \
+   x() { }
 
 #define DBO_DEF_CLASS_SRC(x) \
 dbo_string_t x::_classname = #x
-
-#define DBO_VALIDP(x)    ( NULL != (x) )
-#define DBO_INVALIDP(x)  ( NULL == (x) )
 
 #define DBO_DEF_CLASS_ERR_H \
 protected: \

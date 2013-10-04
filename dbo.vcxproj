@@ -22,9 +22,17 @@
     <ClInclude Include="include\dbo\bmasks.h" />
     <ClInclude Include="include\dbo\callocators.h" />
     <ClInclude Include="include\dbo\classerr.h" />
+    <ClInclude Include="include\dbo\ConvPolicyBase.h" />
+    <ClInclude Include="include\dbo\ConvPolicyConstants.h" />
+    <ClInclude Include="include\dbo\ConvPolicyNull.h" />
+    <ClInclude Include="include\dbo\ConvPolicyTrueWin32.h" />
     <ClInclude Include="include\dbo\dbogendefines.h" />
     <ClInclude Include="include\dbo\GenericObj.h" />
     <ClInclude Include="include\dbo\helpers.h" />
+    <ClInclude Include="include\dbo\LocaleStatic.h" />
+    <ClInclude Include="include\dbo\LoggerBase.h" />
+    <ClInclude Include="include\dbo\LoggerConstants.h" />
+    <ClInclude Include="include\dbo\LoggerNull.h" />
     <ClInclude Include="include\dbo\ltstrcmp.h" />
     <ClInclude Include="include\dbo\macros.h" />
     <ClInclude Include="include\dbo\namespace.h" />
@@ -34,6 +42,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <FileType>CppHeader</FileType>
     </CustomBuild>
+    <ClInclude Include="include\dbo\StringTruncateStatic.h" />
     <ClInclude Include="include\dbo\typesdef.h" />
   </ItemGroup>
   <ItemGroup>
@@ -43,7 +52,14 @@
     <ClCompile Include="src\AttributeInt64.cpp" />
     <ClCompile Include="src\AttributeUInt64.cpp" />
     <ClCompile Include="src\bmasks.cpp" />
+    <ClCompile Include="src\ConvPolicyBase.cpp" />
+    <ClCompile Include="src\ConvPolicyNull.cpp" />
+    <ClCompile Include="src\ConvPolicyTrueWin32.cpp" />
     <ClCompile Include="src\GenericObj.cpp" />
+    <ClCompile Include="src\LocaleStatic.cpp" />
+    <ClCompile Include="src\LoggerBase.cpp" />
+    <ClCompile Include="src\LoggerNull.cpp" />
+    <ClCompile Include="src\StringTruncateStatic.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{093FB3F9-FF4D-4247-B62A-72E953A3B865}</ProjectGuid>

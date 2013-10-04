@@ -52,16 +52,11 @@ NAMESPACE_DBO_CLOSE
 #define DBO_DEF_ATTR_H \
 private: \
    static DBO_KIND _kind; \
-   static dbo_string_t _classname; \
 public: \
-   virtual DBO_KIND getKindType(void) const DBO_NOTHROW \
+   DBO_KIND getKindType(void) const DBO_NOTHROW \
    { \
       return _kind; \
-   }; \
-   virtual dbo_string_t getClassName(void) const DBO_NOTHROW \
-   { \
-      return _classname; \
-   }
+   };
 
 #define DBO_DEF_ATTR_ERR_H \
 protected: \

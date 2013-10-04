@@ -10,6 +10,7 @@
 #ifndef DBO_ATTRIBUTEGENERIC_H_INCLUDED
 #define DBO_ATTRIBUTEGENERIC_H_INCLUDED
 
+#include "dbo/macros.h"
 #include "dbo/attributedef.h"
 #include "dbo/dbogendefines.h"
 #include "dbo/options.h"
@@ -21,12 +22,12 @@ using namespace std;
 // The Abstract Base Class of All Attributes
 class CAttributeGeneric
 {
-
+   DBO_DEF_CLASS_H;
    DBO_DEF_ATTR_H;
    // DBO_PRI_CLASS_CTOR_H(CAttributeGeneric);
    // TODO: public default ctor to keep compilers happy...
 public:
-   CAttributeGeneric() DBO_NOTHROW { 0; };
+   CAttributeGeneric() DBO_NOTHROW { };
 
 public:
    // Attributes are copy-constructible and assignable
@@ -48,7 +49,7 @@ public:
    DBO_DEF_ATTR_ERR_H;
 
 public:
-   // Pure virtual interface methods ->
+   // Pure & virtual interface methods ->
 
    // GET / SET generic methods
    FORCE_INLINE const CAttributeGeneric& get(void) const DBO_NOTHROW 
@@ -83,10 +84,6 @@ public:
    virtual dbo_uint64_t             getAsUInt64(void) const DBO_NOTHROW = 0;
    virtual void                     setAsUInt64(const dbo_uint64_t& iUInt64) DBO_NOTHROW = 0;
 
-   // Pure virtual interface methods <-
-
-   // Virtual General methods ->
-
    // Size has a semantic meaning given by the attribute kind, 
    //    it may be different from the binary size and/or whatever capacity is there
    // Warning, setSize does a reset() on some attributes
@@ -95,18 +92,23 @@ public:
       _size = iSize;
    };
    virtual void reset() DBO_NOTHROW = 0;
+   // Length is the real length of the converted string
    virtual DBO_BIN_KIND_SIZE getLength(void) const DBO_NOTHROW = 0;
    virtual DBO_BIN_KIND_SIZE getWLength(void) const DBO_NOTHROW = 0;
 
    virtual void emptyValue(void) DBO_NOTHROW = 0;
    virtual bool isEmpty(void) const DBO_NOTHROW = 0;
 
-   // Binary Serialization
-   // This has to be overridden for attributes with different binary size from "size"
+   // Pure & virtual interface methods <-
+
+public:
+   // Binary Serialization ->
    virtual DBO_BIN_KIND_SIZE getBinKindSize(void) const DBO_NOTHROW
    {
       return _binsize;
    };
+
+protected:
    // This is used in all attribute ctor's
    void setBinKindSize(const DBO_BIN_KIND_SIZE& iSize) DBO_NOTHROW 
    {
@@ -123,6 +125,9 @@ public:
    void getPropertiesBinData(DBO_KIND& bUnitsType, DBO_BIN_KIND_SIZE& bSize, void*& pAttribute) const DBO_NOTHROW ;
    void setPropertiesBinData(const DBO_KIND& bUnitsType, const DBO_BIN_KIND_SIZE& bSize, void* pAttribute) DBO_NOTHROW ;
 
+   // Binary Serialization <-
+
+public:
    // Methods only for binary operations ->
 
    // Safe access methods
@@ -135,8 +140,7 @@ public:
 
    // Methods only for binary operations <-
 
-   // Virtual General methods <-
-
+public:
    // Real general methods ->
    FORCE_INLINE size_t getSize(void) const DBO_NOTHROW 
    {
@@ -244,7 +248,6 @@ private:
    dbo_uint32_t         _attribute_idx; /* Attribute index */
    /* bit-field for attribute properties */
    mutable dbo_attr_properties_t _properties;
-   /* TODO: Policies if required */
 };
 
 NAMESPACE_DBO_CLOSE
