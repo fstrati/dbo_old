@@ -4,7 +4,7 @@
  *
  */
 
-// The 64 bits integer
+// The 64 bits signed integer
 
 #ifndef DBO_ATTRIBUTEINT64_H_INCLUDED
 #define DBO_ATTRIBUTEINT64_H_INCLUDED
@@ -12,8 +12,6 @@
 #include "dbo/AttributeGeneric.h"
 
 NAMESPACE_DBO_OPEN
-
-using namespace std;
 
 class CAttributeInt64 : public CAttributeGeneric
 {
@@ -117,5 +115,5 @@ protected:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_ATTRIBUTEINT64_H_INCLUDED */
+#endif /* !defined(DBO_ATTRIBUTEINT64_H_INCLUDED) */
 

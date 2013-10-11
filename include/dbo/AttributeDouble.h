@@ -15,8 +15,6 @@
 
 NAMESPACE_DBO_OPEN
 
-using namespace std;
-
 class CAttributeDouble : public CAttributeGeneric
 {
    DBO_DEF_CLASS_H;
@@ -122,5 +120,5 @@ protected:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_ATTRIBUTEDOUBLE_H_INCLUDED */
+#endif /* !defined(DBO_ATTRIBUTEDOUBLE_H_INCLUDED) */
 

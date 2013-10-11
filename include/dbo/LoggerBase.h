@@ -21,10 +21,7 @@ NAMESPACE_DBO_OPEN
 class CLoggerBase
 {
    DBO_DEF_CLASS_H;
-   // DBO_PRI_CLASS_CTOR_H(CLoggerBase);
-   // TODO: public default ctor to keep compilers happy...
-public:
-   CLoggerBase() DBO_NOTHROW { };
+   DBO_PRI_CLASS_CTOR_H(CLoggerBase);
 
 private:
    // Loggers are NOT copy-constructible and assignable

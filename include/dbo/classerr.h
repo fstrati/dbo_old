@@ -10,6 +10,7 @@
 #define DBO_CLASSERR_H_INCLUDED
 
 #include "dbo/namespace.h"
+#include "dbo/typesdef.h"
 
 NAMESPACE_DBO_OPEN
 
@@ -26,5 +27,5 @@ const DBO_CLASS_ERR  DBO_CLASS_ERR_LAST                               = 0x000000
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_CLASSERR_H_INCLUDED */
+#endif /* !defined(DBO_CLASSERR_H_INCLUDED) */
 

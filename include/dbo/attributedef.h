@@ -53,7 +53,7 @@ NAMESPACE_DBO_CLOSE
 private: \
    static DBO_KIND _kind; \
 public: \
-   DBO_KIND getKindType(void) const DBO_NOTHROW \
+   virtual DBO_KIND getKindType(void) const DBO_NOTHROW \
    { \
       return _kind; \
    };
@@ -83,3 +83,4 @@ DBO_KIND x::_kind = z
                                                 } while (false)
 
 #endif /* DBO_ATTRIBUTEDEF_H_INCLUDED */
+

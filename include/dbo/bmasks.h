@@ -7,6 +7,7 @@
 #ifndef DBO_BMASKS_H_INCLUDED
 #define DBO_BMASKS_H_INCLUDED
 
+#include "dbo/namespace.h"
 #include "dbo/typesdef.h"
 
 NAMESPACE_DBO_OPEN

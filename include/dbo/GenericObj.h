@@ -25,12 +25,11 @@
 
 #include "dbo/namespace.h"
 #include "dbo/typesdef.h"
+#include "dbo/callocators.h"
 #include "dbo/macros.h"
 #include "dbo/ltstrcmp.h"
 
 NAMESPACE_DBO_OPEN
-
-using namespace std;
 
 // forward the attributes ->
 class CAttributeGeneric;
@@ -41,16 +40,15 @@ class CAttributeGeneric;
 
 // the attributes collections
 // attribute names are at worst encoded in UTF8
-typedef map  < dbo_char_t* , CAttributeGeneric*, ltstrcmp > DefAttributeMap;
-typedef list < CAttributeGeneric* > DefAttributeList;
-typedef vector < CAttributeGeneric* > DefAttributeVector;
+typedef std::map  < dbo_char_t* , CAttributeGeneric*, ltstrcmp , \
+                    DBO_STD_ALLOCATOR< std::pair<const dbo_char_t* , CAttributeGeneric* > > > DefAttributeMap;
+typedef std::list < CAttributeGeneric* , DBO_STD_ALLOCATOR<CAttributeGeneric*> > DefAttributeList;
+typedef std::vector < CAttributeGeneric* , DBO_STD_ALLOCATOR<CAttributeGeneric*> > DefAttributeVector;
 
 class CGenericObj
 {
    DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CGenericObj);
-public:
-   // CGenericObj();
 
 // Ctor & Dtor
 public:
@@ -152,5 +150,5 @@ protected:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_GENERICOBJ_H_INCLUDED */
+#endif /* !defined(DBO_GENERICOBJ_H_INCLUDED) */
 

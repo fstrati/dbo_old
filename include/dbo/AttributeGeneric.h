@@ -10,6 +10,8 @@
 #ifndef DBO_ATTRIBUTEGENERIC_H_INCLUDED
 #define DBO_ATTRIBUTEGENERIC_H_INCLUDED
 
+#include "dbo/namespace.h"
+#include "dbo/typesdef.h"
 #include "dbo/macros.h"
 #include "dbo/attributedef.h"
 #include "dbo/dbogendefines.h"
@@ -17,17 +19,17 @@
 
 NAMESPACE_DBO_OPEN
 
-using namespace std;
-
 // The Abstract Base Class of All Attributes
 class CAttributeGeneric
 {
    DBO_DEF_CLASS_H;
    DBO_DEF_ATTR_H;
-   // DBO_PRI_CLASS_CTOR_H(CAttributeGeneric);
+   DBO_PRI_CLASS_CTOR_H(CAttributeGeneric);
+/*
    // TODO: public default ctor to keep compilers happy...
 public:
    CAttributeGeneric() DBO_NOTHROW { };
+*/
 
 public:
    // Attributes are copy-constructible and assignable
@@ -252,4 +254,5 @@ private:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_ATTRIBUTEGENERIC_H_INCLUDED */
+#endif /* !defined(DBO_ATTRIBUTEGENERIC_H_INCLUDED) */
+

@@ -7,11 +7,12 @@
 #ifndef DBO_BFLOATS_H_INCLUDED
 #define DBO_BFLOATS_H_INCLUDED
 
+#include "dbo/namespace.h"
 #include "dbo/typesdef.h"
 
 NAMESPACE_DBO_OPEN
 
-#if ( defined(_MSC_VER) && (_MSC_VER>=1400) )
+#if ( defined(_MSC_VER) && (_MSC_VER>=1600) )
 #ifdef DBO_DEBUG
 #pragma pack(show)
 #endif
@@ -19,7 +20,7 @@ NAMESPACE_DBO_OPEN
 #ifdef DBO_DEBUG
 #pragma pack(show)
 #endif
-#else // !( defined(_MSC_VER) && (_MSC_VER>=1400) )
+#else // !( defined(_MSC_VER) && (_MSC_VER>=1600) )
 #error your platform is not supported yet
 #endif
 
@@ -44,7 +45,7 @@ struct dbo_bin_quad_t
 };
 #endif
 
-#if ( defined(_MSC_VER) && (_MSC_VER>=1400) )
+#if ( defined(_MSC_VER) && (_MSC_VER>=1600) )
 #ifdef DBO_DEBUG
 #pragma pack(show)
 #endif
@@ -52,7 +53,7 @@ struct dbo_bin_quad_t
 #ifdef DBO_DEBUG
 #pragma pack(show)
 #endif
-#endif
+#endif // !( defined(_MSC_VER) && (_MSC_VER>=1600) )
 
 NAMESPACE_DBO_CLOSE
 

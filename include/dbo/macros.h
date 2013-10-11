@@ -10,7 +10,6 @@
 #define DBO_MACROS_H_INCLUDED
 
 #include "dbo/namespace.h"
-
 #include "dbo/typesdef.h"
 #include "dbo/classerr.h"
 #include "dbo/attrerr.h"
@@ -24,7 +23,7 @@
 private: \
    static dbo_string_t _classname; \
 public: \
-   dbo_string_t getClassName(void) const DBO_NOTHROW \
+   virtual dbo_string_t getClassName(void) const DBO_NOTHROW \
    { \
       return _classname; \
    }
@@ -49,5 +48,5 @@ public: \
       _last_err = err; \
    }
 
-#endif /* DBO_MACROS_H_INCLUDED */
+#endif /* !defined(DBO_MACROS_H_INCLUDED) */
 

@@ -20,7 +20,7 @@ static std::locale GetLocaleDefault() DBO_NOTHROW ;
 
 static void SetLocaleGlobalToDefault() DBO_NOTHROW ;
 
-static void SetLocaleGlobalTo(const dbo_string_t&  localeStrId) DBO_NOTHROW ;
+static void SetLocaleGlobalTo(const dbo_string_t& localeStrId) DBO_NOTHROW ;
 
 NAMESPACE_DBO_CLOSE
 

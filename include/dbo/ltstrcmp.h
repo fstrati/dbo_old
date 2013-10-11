@@ -9,10 +9,10 @@
 #ifndef DBO_LTSTRCMP_H_INCLUDED
 #define DBO_LTSTRCMP_H_INCLUDED
 
+#include <cstdlib>
+
 #include "dbo/namespace.h"
 #include "dbo/typesdef.h"
-
-#include <cstdlib>
 
 NAMESPACE_DBO_OPEN
 
@@ -57,5 +57,5 @@ NAMESPACE_DBO_OPEN
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* not defined DBO_LTSTRCMP_H_INCLUDED */
+#endif /* !defined(DBO_LTSTRCMP_H_INCLUDED) */
 

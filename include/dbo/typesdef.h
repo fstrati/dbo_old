@@ -9,31 +9,37 @@
 #ifndef DBO_TYPESDEF_H_INCLUDED
 #define DBO_TYPESDEF_H_INCLUDED
 
-#include "dbo/namespace.h"
-
 #include <wchar.h>
+#include <iosfwd>
 #include <string>
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
-#pragma warning( disable : 4996 ) // non-std enum's
-#endif
+#include "dbo/namespace.h"
+#include "dbo/callocators.h"
 
 NAMESPACE_DBO_OPEN
 
 // types
 
-// typedefs for win32 msvc from vs2005 onwards
-#if (defined(_MSC_VER) && (_MSC_VER >= 1400))
+// typedefs for win32 msvc onwards
+#if (defined(_MSC_VER) && (_MSC_VER >= 1600))
 
+// bytes
 typedef unsigned char                  dbo_byte_t;
 
 typedef char                           dbo_char_t;
-// typedef std::string                    dbo_string_t;
-typedef std::basic_string<char>	      dbo_string_t;
-
 typedef wchar_t                        dbo_wchar_t;
-// typedef std::wstring                   dbo_wstring_t;
-typedef std::basic_string<wchar_t>     dbo_wstring_t;
+
+// Strings ->
+
+// typedef std::string                 dbo_string_t;
+// typedef std::basic_string<char>     dbo_string_t;
+typedef std::basic_string<char, std::char_traits<char>, DBO_STD_ALLOCATOR<char> > dbo_string_t;
+
+// typedef std::wstring                dbo_wstring_t;
+// typedef std::basic_string<wchar_t>  dbo_wstring_t;
+typedef std::basic_string<wchar_t, std::char_traits<wchar_t>, DBO_STD_ALLOCATOR<wchar_t> > dbo_wstring_t;
+
+// Strings <-
 
 typedef __int8                         dbo_int8_t;
 typedef unsigned __int8                dbo_uint8_t;
@@ -45,7 +51,7 @@ typedef __int64                        dbo_int64_t;
 typedef unsigned __int64               dbo_uint64_t;
 
 #if 0
-// The following do not work on 32bits old compilers (they map to 64bits integers)
+// The followings do not work on 32bits old compilers (they map to 64bits integers)
 typedef long long                      dbo_int128_t;
 typedef unsigned long long             dbo_uint128_t;
 #endif
@@ -59,6 +65,11 @@ typedef long double                    dbo_quad_t;
 #endif
 
 // Definitions dependent on the platform
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#pragma warning( disable : 4996 ) // non-std enum's
+#endif
+
 #if defined(_MSC_VER) && (_MSC_VER >= 1400)
 
 #define FORCE_INLINE __forceinline
@@ -85,7 +96,7 @@ typedef long double                    dbo_quad_t;
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_TYPESDEF_H_INCLUDED */
+#endif /* !defined(DBO_TYPESDEF_H_INCLUDED) */
 
 
 

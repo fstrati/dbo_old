@@ -13,8 +13,6 @@
 
 NAMESPACE_DBO_OPEN
 
-using namespace std;
-
 class CAttributeCString : public CAttributeGeneric
 {
    DBO_DEF_CLASS_H;
@@ -125,6 +123,6 @@ protected:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_ATTRIBUTESTRING_H_INCLUDED */
+#endif /* !defined(DBO_ATTRIBUTESTRING_H_INCLUDED) */
 
 

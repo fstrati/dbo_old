@@ -67,5 +67,5 @@ static FORCE_INLINE dbo_uint64_t HIGH_UINT64(dbo_uint64_t word)
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_HELPERS_H_INCLUDED */
+#endif /* !defined(DBO_HELPERS_H_INCLUDED) */
 

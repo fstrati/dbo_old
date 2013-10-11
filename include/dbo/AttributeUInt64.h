@@ -13,8 +13,6 @@
 
 NAMESPACE_DBO_OPEN
 
-using namespace std;
-
 class CAttributeUInt64 : public CAttributeGeneric
 {
    DBO_DEF_CLASS_H;
@@ -117,5 +115,5 @@ protected:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* DBO_ATTRIBUTEUINT64_H_INCLUDED */
+#endif /* !defined(DBO_ATTRIBUTEUINT64_H_INCLUDED) */
 

@@ -7,6 +7,9 @@
 #ifndef DBO_CONVPOLICYBASE_H_INCLUDED
 #define DBO_CONVPOLICYBASE_H_INCLUDED
 
+// TODO: Boost
+#include <locale>
+
 #include "dbo/namespace.h"
 #include "dbo/typesdef.h"
 #include "dbo/macros.h"
@@ -15,19 +18,13 @@
 
 #include "dbo/ConvPolicyConstants.h"
 
-// TODO: Boost
-#include <locale>
-
 NAMESPACE_DBO_OPEN
 
 // The Abstract Base Class adapter for Conversion Policies
 class CConvPolicyBase
 {
    DBO_DEF_CLASS_H;
-   // DBO_PRI_CLASS_CTOR_H(CConvPolicyBase);
-   // TODO: public default ctor to keep compilers happy...
-public:
-   CConvPolicyBase() DBO_NOTHROW { };
+   DBO_PRI_CLASS_CTOR_H(CConvPolicyBase);
 
 private:
    // ConvPolicy are NOT copy-constructible and assignable

@@ -46,15 +46,6 @@
     <ClInclude Include="include\dbo\classerr.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\dbo\dbogendefines.h">
-      <Filter>DBOCore\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\dbo\GenericObj.h">
-      <Filter>DBOCore\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\dbo\helpers.h">
-      <Filter>DBOCore\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\dbo\ltstrcmp.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
@@ -76,28 +67,37 @@
     <ClInclude Include="include\dbo\LoggerNull.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\dbo\LoggerBase.h">
-      <Filter>DBOCore\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\dbo\StringTruncateStatic.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\dbo\ConvPolicyBase.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\dbo\ConvPolicyNull.h">
-      <Filter>DBOCore\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\dbo\LocaleStatic.h">
+    <ClInclude Include="include\dbo\LoggerConstants.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\dbo\ConvPolicyConstants.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\dbo\LoggerConstants.h">
+    <ClInclude Include="include\dbo\ConvPolicyNull.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\dbo\ConvPolicyTrueWin32.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\dbogendefines.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\GenericObj.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\helpers.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\LocaleStatic.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\LoggerBase.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
