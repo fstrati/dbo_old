@@ -9,13 +9,11 @@
 
 #include "dbo/ConvPolicyTrueWin32.h"
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
 
 NAMESPACE_DBO_OPEN
 
 using namespace std;
-
-DBO_DEF_CLASS_SRC(CConvPolicyTrueWin32);
 
 // Construction/Destruction
 CConvPolicyTrueWin32::CConvPolicyTrueWin32(const dbo_char_t* const iName, const dbo_uint8_t convRoundMode) DBO_NOTHROW \
@@ -32,5 +30,5 @@ CConvPolicyTrueWin32::CConvPolicyTrueWin32(const dbo_string_t& iName    , const 
 
 NAMESPACE_DBO_CLOSE
 
-#endif // !defined(_MSC_VER) || !(_MSC_VER >= 1400)
+#endif // !defined(_MSC_VER) || !(_MSC_VER >= 1600)
 

@@ -15,10 +15,10 @@
 // 2013.09.29: just testing GitHub
 
 // 2013.10.03:
-// -- Allocators, emplacement allocators
+// -- Allocators
 // -- Loggers, Conversion Policies
+// -- Refactoring / Cleaning
 // -- Introducing dependency onto Boost (Boost.locale) & ICU
-// -- Refactoring
 
 
 

@@ -14,7 +14,6 @@ NAMESPACE_DBO_OPEN
 // The Null Policy Class
 class CConvPolicyNull : public CConvPolicyBase
 {
-   DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CConvPolicyNull);
 
 private:

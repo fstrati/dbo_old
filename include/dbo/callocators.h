@@ -21,6 +21,7 @@ NAMESPACE_DBO_OPEN
 // The purpose of these definitions is just to mark explicitly where we do use
 // allocators: transition to a custom allocator will be easier.
 
+// c-way
 #define DBO_MALLOC(x)      std::malloc(x)
 #define DBO_FREE(x)        std::free(x)
 

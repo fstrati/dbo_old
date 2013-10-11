@@ -17,7 +17,6 @@ NAMESPACE_DBO_OPEN
 
 class CAttributeDouble : public CAttributeGeneric
 {
-   DBO_DEF_CLASS_H;
    DBO_DEF_ATTR_H;
    DBO_PRI_CLASS_CTOR_H(CAttributeDouble);
 

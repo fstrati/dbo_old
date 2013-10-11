@@ -14,6 +14,6 @@
 
 //#define NAMESPACE_DBO_USING using namespace dbo
 
-#endif /* DBO_NAMESPACE_H_INCLUDED */
+#endif /* !defined(DBO_NAMESPACE_H_INCLUDED) */
 
 

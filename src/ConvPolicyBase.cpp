@@ -13,8 +13,6 @@ NAMESPACE_DBO_OPEN
 
 using namespace std;
 
-DBO_DEF_CLASS_SRC(CConvPolicyBase);
-
 // explicit Construction/Destruction
 CConvPolicyBase::CConvPolicyBase(const dbo_char_t* const iName, \
                                  const dbo_uint8_t convRoundMode /* = DBO_CONV_ROUND_NONE */) DBO_NOTHROW

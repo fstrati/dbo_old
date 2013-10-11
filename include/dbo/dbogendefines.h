@@ -92,6 +92,6 @@ NAMESPACE_DBO_CLOSE
                                                          throw; \
                                                       } while (false)
 
-#endif /* DBO_DBOGENDEFINES_H_INCLUDED */
+#endif /* !defined(DBO_DBOGENDEFINES_H_INCLUDED) */
 
 

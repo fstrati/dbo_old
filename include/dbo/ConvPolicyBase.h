@@ -23,7 +23,6 @@ NAMESPACE_DBO_OPEN
 // The Abstract Base Class adapter for Conversion Policies
 class CConvPolicyBase
 {
-   DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CConvPolicyBase);
 
 private:
@@ -35,7 +34,6 @@ public:
    // explicit Construction/Destruction
    explicit CConvPolicyBase(const dbo_char_t* const iName, const dbo_uint8_t convRoundMode = DBO_CONV_ROUND_NONE) DBO_NOTHROW;
    explicit CConvPolicyBase(const dbo_string_t& iName    , const dbo_uint8_t convRoundMode = DBO_CONV_ROUND_NONE) DBO_NOTHROW;
-   // TODO: public default dtor to keep compilers happy... (not pure virtual)
    virtual ~CConvPolicyBase() DBO_NOTHROW { };
 
 public:

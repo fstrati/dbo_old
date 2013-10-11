@@ -10,6 +10,8 @@
 #include "dbo/namespace.h"
 #include "dbo/typesdef.h"
 
+// Utilities to truncate strings in copying them
+
 NAMESPACE_DBO_OPEN
 
 NAMESPACE_DBO_CLOSE

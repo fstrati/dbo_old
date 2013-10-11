@@ -15,7 +15,6 @@ NAMESPACE_DBO_OPEN
 
 using namespace std;
 
-DBO_DEF_CLASS_SRC(CAttributeGeneric);
 DBO_DEF_ATTR_KIND(CAttributeGeneric,DBO_KIND_NULL);
 
 // Construction/Destruction

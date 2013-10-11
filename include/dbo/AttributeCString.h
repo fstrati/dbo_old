@@ -6,8 +6,8 @@
 
 // The c-style String Attribute
 
-#ifndef DBO_ATTRIBUTESTRING_H_INCLUDED
-#define DBO_ATTRIBUTESTRING_H_INCLUDED
+#ifndef DBO_ATTRIBUTECSTRING_H_INCLUDED
+#define DBO_ATTRIBUTECSTRING_H_INCLUDED
 
 #include "dbo/AttributeGeneric.h"
 
@@ -15,7 +15,6 @@ NAMESPACE_DBO_OPEN
 
 class CAttributeCString : public CAttributeGeneric
 {
-   DBO_DEF_CLASS_H;
    DBO_DEF_ATTR_H;
    DBO_PRI_CLASS_CTOR_H(CAttributeCString);
 
@@ -123,6 +122,6 @@ protected:
 
 NAMESPACE_DBO_CLOSE
 
-#endif /* !defined(DBO_ATTRIBUTESTRING_H_INCLUDED) */
+#endif /* !defined(DBO_ATTRIBUTECSTRING_H_INCLUDED) */
 
 

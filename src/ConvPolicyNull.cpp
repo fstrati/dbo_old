@@ -14,8 +14,6 @@ NAMESPACE_DBO_OPEN
 
 using namespace std;
 
-DBO_DEF_CLASS_SRC(CConvPolicyNull);
-
 // Construction/Destruction
 CConvPolicyNull::CConvPolicyNull(const dbo_char_t* const iName, const dbo_uint8_t convRoundMode) DBO_NOTHROW \
    : CConvPolicyBase(iName,convRoundMode)
@@ -932,7 +930,7 @@ template<typename T>
 static DBO_CONV_RESULT stConvNumToStr(dbo_string_t&  oStr, const T& value, const std::locale& localeOut)
 {
    // TODO: Boost
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
    std::stringstream ss;
    ss.imbue(localeOut);
    ss << value;
@@ -1015,7 +1013,7 @@ template<typename T>
 static DBO_CONV_RESULT stConvNumToWStr(dbo_wstring_t&  oStr, const T& value, const std::locale& localeOut)
 {
    // TODO: Boost
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
    std::wstringstream ss;
    ss.imbue(localeOut);
    ss << value;

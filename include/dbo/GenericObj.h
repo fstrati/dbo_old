@@ -47,7 +47,6 @@ typedef std::vector < CAttributeGeneric* , DBO_STD_ALLOCATOR<CAttributeGeneric*>
 
 class CGenericObj
 {
-   DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CGenericObj);
 
 // Ctor & Dtor

@@ -13,10 +13,9 @@
 
 NAMESPACE_DBO_OPEN
 
-// The Null Policy Class
+// The Test Win32 Policy Class
 class CConvPolicyTrueWin32 : public CConvPolicyNull
 {
-   DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CConvPolicyTrueWin32);
 
 private:
@@ -299,7 +298,7 @@ public:
 
 NAMESPACE_DBO_CLOSE
 
-#endif // !defined(_MSC_VER) || !(_MSC_VER >= 1400)
+#endif // !defined(_MSC_VER) || !(_MSC_VER >= 1600)
 
 #endif /* !defined(DBO_CONVPOLICYTRUEWIN32_H_INCLUDED) */
 

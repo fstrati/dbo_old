@@ -20,7 +20,6 @@ NAMESPACE_DBO_OPEN
 // The Abstract Base Class adapter for Loggers
 class CLoggerBase
 {
-   DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CLoggerBase);
 
 private:
@@ -32,7 +31,6 @@ public:
    // explicit Construction/Destruction
    explicit CLoggerBase(const dbo_char_t* const iName) DBO_NOTHROW;
    explicit CLoggerBase(const dbo_string_t& iName) DBO_NOTHROW;
-   // TODO: public default dtor to keep compilers happy... (not pure virtual)
    virtual ~CLoggerBase() DBO_NOTHROW { };
 
 public:

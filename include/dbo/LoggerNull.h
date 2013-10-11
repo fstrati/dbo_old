@@ -15,7 +15,6 @@ NAMESPACE_DBO_OPEN
 
 class CLoggerNull : public CLoggerBase
 {
-   DBO_DEF_CLASS_H;
    DBO_PRI_CLASS_CTOR_H(CLoggerNull);
 
 private:

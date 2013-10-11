@@ -11,7 +11,6 @@
 
 #include "dbo/namespace.h"
 #include "dbo/typesdef.h"
-#include "dbo/macros.h"
 #include "dbo/attrerr.h"
 
 NAMESPACE_DBO_OPEN
@@ -49,6 +48,9 @@ typedef struct DBO_ATTR_PROPERTIES
 
 NAMESPACE_DBO_CLOSE
 
+#define DBO_DEF_ATTR_KIND(x,z) \
+   DBO_KIND x::_kind = z
+
 #define DBO_DEF_ATTR_H \
 private: \
    static DBO_KIND _kind; \
@@ -56,23 +58,20 @@ public: \
    virtual DBO_KIND getKindType(void) const DBO_NOTHROW \
    { \
       return _kind; \
-   };
+   }
 
 #define DBO_DEF_ATTR_ERR_H \
 protected: \
    mutable DBO_ATTR_ERR _last_err; \
 public: \
-   FORCE_INLINE DBO_ATTR_ERR getLastError(void) const DBO_NOTHROW \
+   virtual DBO_ATTR_ERR getLastError(void) const DBO_NOTHROW \
    { \
       return _last_err; \
    }; \
-   FORCE_INLINE void setLastError(const DBO_ATTR_ERR err) const DBO_NOTHROW \
+   virtual void setLastError(const DBO_ATTR_ERR err) const DBO_NOTHROW \
    { \
       _last_err = err; \
    }
-
-#define DBO_DEF_ATTR_KIND(x,z) \
-DBO_KIND x::_kind = z
 
 #define DBO_DEF_EMPTYVALUE(value,empty_value)   do \
                                                 { \
@@ -82,5 +81,5 @@ DBO_KIND x::_kind = z
                                                    } \
                                                 } while (false)
 
-#endif /* DBO_ATTRIBUTEDEF_H_INCLUDED */
+#endif /* !defined(DBO_ATTRIBUTEDEF_H_INCLUDED) */
 

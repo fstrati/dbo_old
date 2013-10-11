@@ -19,7 +19,6 @@ using namespace std;
 {
    // Locale names are not standardized. For example, under MSVC you need to provide the name en-US or English_USA.1252, 
    // when on POSIX platforms it would be en_US.UTF-8 or en_US.ISO-8859-1 
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
    std::locale ldefault;
    try
    {
@@ -29,10 +28,6 @@ using namespace std;
    {
    }
    return ldefault;
-#else
-   std::locale ldefault("en_US.UTF-8");
-   return ldefault;
-#endif
 }
 
 /*static*/ void SetLocaleGlobalToDefault() DBO_NOTHROW

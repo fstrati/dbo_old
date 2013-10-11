@@ -12,8 +12,6 @@ NAMESPACE_DBO_OPEN
 
 using namespace std;
 
-DBO_DEF_CLASS_SRC(CLoggerNull);
-
 // Construction/Destruction
 CLoggerNull::CLoggerNull(const dbo_char_t* const iName) DBO_NOTHROW \
    : CLoggerBase(iName)

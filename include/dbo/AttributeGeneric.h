@@ -22,14 +22,8 @@ NAMESPACE_DBO_OPEN
 // The Abstract Base Class of All Attributes
 class CAttributeGeneric
 {
-   DBO_DEF_CLASS_H;
    DBO_DEF_ATTR_H;
    DBO_PRI_CLASS_CTOR_H(CAttributeGeneric);
-/*
-   // TODO: public default ctor to keep compilers happy...
-public:
-   CAttributeGeneric() DBO_NOTHROW { };
-*/
 
 public:
    // Attributes are copy-constructible and assignable
@@ -45,7 +39,6 @@ public:
    // explicit Construction/Destruction
    explicit CAttributeGeneric(const dbo_uint32_t& index, const dbo_char_t* const iName) DBO_NOTHROW;
    explicit CAttributeGeneric(const dbo_uint32_t& index, const dbo_string_t& iName) DBO_NOTHROW;
-   // TODO: public default dtor to keep compilers happy... (not pure virtual)
    virtual ~CAttributeGeneric() DBO_NOTHROW { };
 
    DBO_DEF_ATTR_ERR_H;

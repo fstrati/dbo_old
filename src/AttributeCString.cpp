@@ -25,7 +25,6 @@ NAMESPACE_DBO_OPEN
 
 using namespace std;
 
-DBO_DEF_CLASS_SRC(CAttributeCString);
 DBO_DEF_ATTR_KIND(CAttributeCString,DBO_KIND_CSTRING);
 
 // helpers for copy

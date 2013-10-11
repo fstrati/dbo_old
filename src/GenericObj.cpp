@@ -34,24 +34,6 @@ NAMESPACE_DBO_OPEN
 
 using namespace std;
 
-DBO_DEF_CLASS_SRC(CGenericObj);
-
-// DO NOT USE THIS...
-// CGenericObj construction, destruction
-/*
-CGenericObj::CGenericObj()
-{
-   // the object name
-   _objectname = "CGenericObj";
-   // the attribute index counter
-   _attribute_idx_counter = DBO_INT_ZERO;
-   // collections
-   AttributesMap.clear();
-   AttributesVec.clear();
-   DBO_ERROR_THROW_TMP;
-}
-*/
-
 CGenericObj::CGenericObj(const dbo_char_t* const iObjectName)
    : _objectname(iObjectName)
 {
@@ -777,10 +759,6 @@ bool CGenericObj::attributeExists(const dbo_char_t* const AttribName) const
    {
       return true;
    }
-   else
-   {
-      return false;
-   }
    return false;
 }
 
@@ -792,10 +770,6 @@ bool CGenericObj::attributeExists(const string& AttribName) const
    if (itObj != AttributesMap.end())
    {
       return true;
-   }
-   else
-   {
-      return false;
    }
    return false;
 }
@@ -811,10 +785,6 @@ bool CGenericObj::attributeExists(const dbo_uint32_t index) const
    if (DBO_VALIDP(pObj))
    {
       return true;
-   }
-   else
-   {
-      return false;
    }
    return false;
 }

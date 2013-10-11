@@ -66,11 +66,11 @@ typedef long double                    dbo_quad_t;
 
 // Definitions dependent on the platform
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
 #pragma warning( disable : 4996 ) // non-std enum's
 #endif
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
 
 #define FORCE_INLINE __forceinline
 #define DBO_NOTHROW  throw()
