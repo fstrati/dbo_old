@@ -25,6 +25,7 @@ NAMESPACE_DBO_OPEN
 
 // bytes
 typedef unsigned char                  dbo_byte_t;
+typedef bool                           dbo_bool_t;
 
 typedef char                           dbo_char_t;
 typedef wchar_t                        dbo_wchar_t;

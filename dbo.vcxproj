@@ -51,6 +51,7 @@
     <ClCompile Include="src\AttributeGeneric.cpp" />
     <ClCompile Include="src\AttributeInt64.cpp" />
     <ClCompile Include="src\AttributeUInt64.cpp" />
+    <ClCompile Include="src\bfloats.cpp" />
     <ClCompile Include="src\bmasks.cpp" />
     <ClCompile Include="src\ConvPolicyBase.cpp" />
     <ClCompile Include="src\ConvPolicyNull.cpp" />

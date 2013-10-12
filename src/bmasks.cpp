@@ -4,7 +4,7 @@
  *
  */
 
-// implementation file for bfloats
+// implementation file for bmasks
 
 #include "dbo/bmasks.h"
 
@@ -21,13 +21,13 @@ NAMESPACE_DBO_OPEN
 
 // Functions for Masks to extract the Sign (S), the Mantissa (M) and the Exponent (X)
 
-/*static*/ FORCE_INLINE dbo_uint32_t ComputeSignMaskFloat() DBO_NOTHROW 
+FORCE_INLINE dbo_uint32_t ComputeSignMaskFloat() DBO_NOTHROW 
 {
    dbo_uint32_t iret = ((dbo_uint32_t) 1)<<((dbo_uint32_t) 31);
    return iret;
 }
 
-/*static*/ FORCE_INLINE dbo_uint32_t ComputeMantMaskFloat() DBO_NOTHROW 
+FORCE_INLINE dbo_uint32_t ComputeMantMaskFloat() DBO_NOTHROW 
 {
    dbo_uint32_t iret = 0;
    for (dbo_uint32_t pos = 0; pos<23; ++pos)
@@ -37,7 +37,7 @@ NAMESPACE_DBO_OPEN
    return iret;
 }
 
-/*static*/ FORCE_INLINE dbo_uint32_t ComputeExpMaskFloat() DBO_NOTHROW 
+FORCE_INLINE dbo_uint32_t ComputeExpMaskFloat() DBO_NOTHROW 
 {
    dbo_uint32_t iret = 0;
    for (dbo_uint32_t pos = 23; pos<31; ++pos)
@@ -47,13 +47,13 @@ NAMESPACE_DBO_OPEN
    return iret;
 }
 
-/*static*/ FORCE_INLINE dbo_uint64_t ComputeSignMaskDouble() DBO_NOTHROW 
+FORCE_INLINE dbo_uint64_t ComputeSignMaskDouble() DBO_NOTHROW 
 {
    dbo_uint64_t iret = ((dbo_uint64_t) 1)<<((dbo_uint64_t) 63);
    return iret;
 }
 
-/*static*/ FORCE_INLINE dbo_uint64_t ComputeMantMaskDouble() DBO_NOTHROW 
+FORCE_INLINE dbo_uint64_t ComputeMantMaskDouble() DBO_NOTHROW 
 {
    dbo_uint64_t iret = 0;
    for (dbo_uint32_t pos = 0; pos<52; ++pos)
@@ -63,7 +63,7 @@ NAMESPACE_DBO_OPEN
    return iret;
 }
 
-/*static*/ FORCE_INLINE dbo_uint64_t ComputeExpMaskDouble() DBO_NOTHROW 
+FORCE_INLINE dbo_uint64_t ComputeExpMaskDouble() DBO_NOTHROW 
 {
    dbo_uint64_t iret = 0;
    for (dbo_uint32_t pos = 52; pos<63; ++pos)

@@ -55,6 +55,15 @@ struct dbo_bin_quad_t
 #endif
 #endif // !( defined(_MSC_VER) && (_MSC_VER>=1600) )
 
+// The utility functions
+#if ( defined(_MSC_VER) && (_MSC_VER>=1600) )
+
+static void ComputeFloatFromInd(dbo_double_t& oDouble, const dbo_bin_double_t& iStr) DBO_NOTHROW ;
+
+static void ComputeIndFromFloat(dbo_bin_double_t& oStr, const dbo_double_t& iDouble) DBO_NOTHROW ;
+
+#endif // !( defined(_MSC_VER) && (_MSC_VER>=1600) )
+
 NAMESPACE_DBO_CLOSE
 
 #endif // !defined(DBO_BFLOATS_H_INCLUDED)

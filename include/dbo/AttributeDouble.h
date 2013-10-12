@@ -11,8 +11,6 @@
 
 #include "dbo/AttributeGeneric.h"
 
-#include "dbo/bfloats.h"
-
 NAMESPACE_DBO_OPEN
 
 class CAttributeDouble : public CAttributeGeneric
@@ -109,12 +107,9 @@ protected:
 protected:
    /* Attribute value */
    dbo_double_t* value;
-   dbo_bin_double_t* binvalue; /* independent representation of a double */
 
    static dbo_double_t* const Alloca() DBO_NOTHROW ;
    static void Dealloca(dbo_double_t* phost) DBO_NOTHROW ;
-   static dbo_bin_double_t* const AllocaBin() DBO_NOTHROW ;
-   static void DeallocaBin(dbo_bin_double_t* phost) DBO_NOTHROW ;
 };
 
 NAMESPACE_DBO_CLOSE

@@ -18,8 +18,6 @@
 
 #include "dbo/AttributeDouble.h"
 
-#include "dbo/bmasks.h"
-
 NAMESPACE_DBO_OPEN
 
 using namespace std;
@@ -32,12 +30,11 @@ CAttributeDouble::CAttributeDouble(const dbo_uint32_t& index, const dbo_char_t* 
    : CAttributeGeneric(index, iName)
 {
    CAttributeGeneric::setSize(sizeof(dbo_double_t));
-   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_bin_double_t)));
+   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_double_t)));
 
    value = Alloca();
-   binvalue = AllocaBin();
 
-   if ( DBO_VALIDP(value) && DBO_VALIDP(binvalue) )
+   if ( DBO_VALIDP(value) )
    {
       *value = DBO_DBLE_ZERO;
    }
@@ -52,12 +49,11 @@ CAttributeDouble::CAttributeDouble(const dbo_uint32_t& index, const dbo_string_t
    : CAttributeGeneric(index, iName)
 {
    CAttributeGeneric::setSize(sizeof(dbo_double_t));
-   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_bin_double_t)));
+   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_double_t)));
 
    value = Alloca();
-   binvalue = AllocaBin();
 
-   if ( DBO_VALIDP(value) && DBO_VALIDP(binvalue) )
+   if ( DBO_VALIDP(value) )
    {
       *value = DBO_DBLE_ZERO;
    }
@@ -72,12 +68,11 @@ CAttributeDouble::CAttributeDouble(const dbo_double_t& iDouble, const dbo_uint32
    : CAttributeGeneric(index, iName)
 {
    CAttributeGeneric::setSize(sizeof(dbo_double_t));
-   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_bin_double_t)));
+   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_double_t)));
 
    value = Alloca();
-   binvalue = AllocaBin();
 
-   if ( DBO_VALIDP(value) && DBO_VALIDP(binvalue) )
+   if ( DBO_VALIDP(value) )
    {
       *value = iDouble;
    }
@@ -92,12 +87,11 @@ CAttributeDouble::CAttributeDouble(const dbo_double_t& iDouble, const dbo_uint32
    : CAttributeGeneric(index, iName)
 {
    CAttributeGeneric::setSize(sizeof(dbo_double_t));
-   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_bin_double_t)));
+   CAttributeGeneric::setBinKindSize(static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_double_t)));
 
    value = Alloca();
-   binvalue = AllocaBin();
 
-   if ( DBO_VALIDP(value) && DBO_VALIDP(binvalue) )
+   if ( DBO_VALIDP(value) )
    {
       *value = iDouble;
    }
@@ -111,7 +105,6 @@ CAttributeDouble::CAttributeDouble(const dbo_double_t& iDouble, const dbo_uint32
 CAttributeDouble::~CAttributeDouble() DBO_NOTHROW 
 {
    Dealloca(value);
-   DeallocaBin(binvalue);
 }
 
 // Copyable and assignable
@@ -435,40 +428,8 @@ void CAttributeDouble::getAttributeBinData(DBO_KIND& bType, DBO_BIN_KIND_SIZE& b
 {
    bType = getKindType();
    bSize = getBinKindSize();
-
-   // Convert the double value in our custom representation, i.e. split (Sign+Mantissa) from (Exponent)
-   // In IEEE float representations a double is given by x = S*M*(2**E) - ** means exponentation
-   // The Sign (S) is the leading bit
-   // The Exponent (E) (biased by a value in order to represent negative exponents) is the following 11 bits (binary representation) in a double
-   // The Mantissa (M) is the remaining 52 bits (binary representation of the mantissa) in a double
-   // For Intel IEEE the representation is IEEE float with leading 1 in the mantissa omitted
-   // For every platform do encode double as for Intel IEEE Format
-   // NOTE: Not every platform adhere to the IEEE formats, that's why we do encode in our expanded form
-   if (DBO_VALIDP(value))
-   {
-#if ( defined(_MSC_VER) && (_MSC_VER>=1400) )
-      // For msvc the representation is IEEE float with leading 1 in the mantissa omitted
-      // Get the masks for Intel IEEE double
-      dbo_uint64_t dsign_mask = ComputeSignMaskDouble();
-      dbo_uint64_t dexp_mask = ComputeExpMaskDouble();
-      dbo_uint64_t dman_mask = ComputeMantMaskDouble();
-      // Extract the data
-      dbo_uint64_t didirect = DBO_INT_ZERO;
-      memcpy((void*) &didirect, (void*) value, sizeof(dbo_double_t));
-      dbo_uint64_t dextracted_sign = didirect & dsign_mask;
-      dbo_uint64_t dextracted_exp  = didirect & dexp_mask;
-      dbo_uint64_t dextracted_man  = didirect & dman_mask;
-      // Copy the mantissa and its sign to our format
-      binvalue->mantissa = DBO_INT_ZERO;
-      binvalue->mantissa = dextracted_sign | dextracted_man;
-      binvalue->exp = DBO_INT_ZERO;
-      binvalue->exp = static_cast<dbo_uint16_t> (dextracted_exp>>((dbo_uint64_t) 52));
-#else
-      binvalue->mantissa = DBO_INT_ZERO;
-      binvalue->exp = DBO_INT_ZERO;
-#endif
-   }
-   pAttribute = static_cast<void*> (binvalue);
+   // Do use the plain representation, double IEEE Intel format already in the correct byte order (little endian)
+   pAttribute = static_cast<void*> (value);
 }
 
 void CAttributeDouble::setAttributeBinData(const DBO_KIND& bType, const DBO_BIN_KIND_SIZE& bSize, void* pAttribute) DBO_NOTHROW 
@@ -478,25 +439,9 @@ void CAttributeDouble::setAttributeBinData(const DBO_KIND& bType, const DBO_BIN_
       setValid(false);
       return;
    }
-   // Do use the plain integers representation already in the correct byte order
-   CAttributeGeneric::genCopy(reinterpret_cast<dbo_byte_t*> (binvalue), bSize, reinterpret_cast<dbo_byte_t*> (pAttribute), bSize);
-   double reconstruction = DBO_INT_ZERO;
-#if ( defined(_MSC_VER) && (_MSC_VER>=1400) )
-   // For Intel IEEE the representation is IEEE float with leading 1 in the mantissa omitted
-   // Import the data
-   dbo_uint64_t dmant_exp = ((dbo_uint64_t) 1022)<<((dbo_uint64_t) 52); // 1022 is the bias
-   dbo_uint64_t dmantissa = DBO_INT_ZERO; 
-   dmantissa = binvalue->mantissa | dmant_exp ;
-   double in_dmantissa;
-   memset((void*) &in_dmantissa, 0, sizeof(dbo_double_t));
-   memcpy((void*) &in_dmantissa, (void*) &dmantissa, sizeof(dbo_double_t));
-   dbo_int32_t dinput_exp = (binvalue->exp) - 1022;
-   reconstruction = ldexp(in_dmantissa,dinput_exp);
-#else
-   setValid(false);
-#endif
+   // Do use the plain representation already in the correct byte order
    CAttributeGeneric::genCopy(reinterpret_cast<dbo_byte_t*> (value), static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_double_t)), 
-      reinterpret_cast<dbo_byte_t*> (&reconstruction), static_cast<DBO_BIN_KIND_SIZE> (sizeof(dbo_double_t)));
+      reinterpret_cast<dbo_byte_t*> (pAttribute), bSize);
 }
 
 // Binary Access methods
@@ -545,27 +490,6 @@ dbo_double_t* const CAttributeDouble::Alloca() DBO_NOTHROW
 }
 
 void CAttributeDouble::Dealloca(dbo_double_t* phost) DBO_NOTHROW 
-{
-   if (DBO_VALIDP(phost))
-   {
-      DBO_FREE(phost);
-   }
-   phost = NULL;
-}
-
-dbo_bin_double_t* const CAttributeDouble::AllocaBin() DBO_NOTHROW 
-{
-   dbo_bin_double_t* Allocated = NULL;
-   Allocated = static_cast<dbo_bin_double_t*> (DBO_MALLOC(sizeof(dbo_bin_double_t)));
-   if ( DBO_INVALIDP(Allocated) )
-   {
-      Allocated = NULL;
-      return Allocated;
-   }
-   return Allocated;
-}
-
-void CAttributeDouble::DeallocaBin(dbo_bin_double_t* phost) DBO_NOTHROW 
 {
    if (DBO_VALIDP(phost))
    {

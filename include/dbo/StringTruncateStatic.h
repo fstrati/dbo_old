@@ -10,9 +10,19 @@
 #include "dbo/namespace.h"
 #include "dbo/typesdef.h"
 
-// Utilities to truncate strings in copying them
+// Utilities to truncate small strings in copying them
 
 NAMESPACE_DBO_OPEN
+
+// All these functions return true if string was actually truncated
+
+static dbo_bool_t TruncateStrToStr(dbo_string_t& oStr, const dbo_string_t& iStr, const dbo_uint32_t oMaxSize) DBO_NOTHROW ;
+
+static dbo_bool_t TruncateStrToStr(dbo_string_t& oStr, const dbo_char_t* const iStr, const dbo_uint32_t oMaxSize) DBO_NOTHROW ;
+
+static dbo_bool_t TruncateStrToStr(dbo_wstring_t& oStr, const dbo_wstring_t& iStr, const dbo_uint32_t oMaxSize) DBO_NOTHROW ;
+
+static dbo_bool_t TruncateStrToStr(dbo_wstring_t& oStr, const dbo_wchar_t* const iStr, const dbo_uint32_t oMaxSize) DBO_NOTHROW ;
 
 NAMESPACE_DBO_CLOSE
 
