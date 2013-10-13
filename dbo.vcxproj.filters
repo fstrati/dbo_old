@@ -82,9 +82,6 @@
     <ClInclude Include="include\dbo\ConvPolicyNull.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\dbo\ConvPolicyTrueWin32.h">
-      <Filter>DBOCore\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\dbo\dbogendefines.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
@@ -98,6 +95,9 @@
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\dbo\LoggerBase.h">
+      <Filter>DBOCore\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dbo\ConvPolicyTempWin32.h">
       <Filter>DBOCore\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -141,10 +141,10 @@
     <ClCompile Include="src\LocaleStatic.cpp">
       <Filter>DBOCore\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ConvPolicyTrueWin32.cpp">
+    <ClCompile Include="src\bfloats.cpp">
       <Filter>DBOCore\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\bfloats.cpp">
+    <ClCompile Include="src\ConvPolicyTempWin32.cpp">
       <Filter>DBOCore\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

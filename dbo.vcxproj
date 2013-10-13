@@ -25,7 +25,7 @@
     <ClInclude Include="include\dbo\ConvPolicyBase.h" />
     <ClInclude Include="include\dbo\ConvPolicyConstants.h" />
     <ClInclude Include="include\dbo\ConvPolicyNull.h" />
-    <ClInclude Include="include\dbo\ConvPolicyTrueWin32.h" />
+    <ClInclude Include="include\dbo\ConvPolicyTempWin32.h" />
     <ClInclude Include="include\dbo\dbogendefines.h" />
     <ClInclude Include="include\dbo\GenericObj.h" />
     <ClInclude Include="include\dbo\helpers.h" />
@@ -55,7 +55,7 @@
     <ClCompile Include="src\bmasks.cpp" />
     <ClCompile Include="src\ConvPolicyBase.cpp" />
     <ClCompile Include="src\ConvPolicyNull.cpp" />
-    <ClCompile Include="src\ConvPolicyTrueWin32.cpp" />
+    <ClCompile Include="src\ConvPolicyTempWin32.cpp" />
     <ClCompile Include="src\GenericObj.cpp" />
     <ClCompile Include="src\LocaleStatic.cpp" />
     <ClCompile Include="src\LoggerBase.cpp" />

@@ -7,7 +7,7 @@
 #include "dbo/namespace.h"
 #include "dbo/callocators.h"
 
-#include "dbo/ConvPolicyTrueWin32.h"
+#include "dbo/ConvPolicyTempWin32.h"
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1600)
 
